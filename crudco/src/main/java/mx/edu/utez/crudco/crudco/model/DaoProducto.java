@@ -61,7 +61,8 @@ public class DaoProducto implements DaoRepository{
         MysqlConnector conector = new MysqlConnector();
         Connection con = conector.connect();
         try {
-            PreparedStatement stmt = con.prepareStatement("update inventario( set producto = ?, cantidad = ?, unidadm = ?, where id = ?");
+           PreparedStatement stmt =con.prepareStatement("update inventario "+
+                   "set producto = ?, cantidad = ?, unidadm = ?" + "where id = ?");
             stmt.setString(1, prd.getProducto());
             stmt.setInt(2, prd.getCantidad());
             stmt.setString(3, prd.getUnidadm());
@@ -100,7 +101,8 @@ public class DaoProducto implements DaoRepository{
         MysqlConnector con = new MysqlConnector();
         Connection conection = con.connect();
         try {
-            PreparedStatement stmt = conection.prepareStatement("insert into inventario(producto, cantidad, unidadm) values(?,?,?))");
+            PreparedStatement stmt = conection.prepareStatement("insert into inventario (producto,cantidad,unidadm)"
+                    + "values(?,?,?)");
             stmt.setString(1, prd.getProducto());
             stmt.setInt(2, prd.getCantidad());
             stmt.setString(3, prd.getUnidadm());

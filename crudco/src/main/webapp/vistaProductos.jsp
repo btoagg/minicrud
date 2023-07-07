@@ -12,16 +12,26 @@
 
 <head>
     <title>Cocina Economica</title>
+    <ul class="nav nav-pills nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="index.jsp">Cocina Economica</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  href="vistaProductos.jsp">Consultar Inventario</a>
+        </li>
+        <li class="nav-item">
+        </li>
+    </ul>
 </head>
 <body>
-<table>
+<br>
+
+<table class="table table-striped-columns">
     <thead>
     <tr>
         <th>Producto</th>
-        <br>
-        <th>Cantidad</th>
-        <br>
-        <th>Unidad de medida</th>
+        <th width="50px">Cantidad</th>
+        <th width="50px">Unidad de medida</th>
     </tr>
 
     </thead>
@@ -33,13 +43,13 @@
     %>
     <c:forEach items="${Producto}" var="u">
         <tr>
-            <td>${u.producto}</td>
-            <td>${u.cantidad}</td>
-            <td>${u.unidadm}</td>
+            <td class="table table-success table-striped">${u.producto}</td>
+            <td class="table table-success table-striped">${u.cantidad}</td>
+            <td class="table table-success table-striped">${u.unidadm}</td>
             <td><a class="btn btn-warning"
-                   href="/comida-servlet?id=${u.id}&operacion=update">Editar</a></td>
+                   href="comida-servlet?id=${u.id}&operacion=update">Editar</a></td>
             <td><a class="btn btn-danger"
-                   href="/comida-servlet?id=${u.id}&operacion=delete">X</a></td>
+                   href="comida-servlet?id=${u.id}&operacion=delete">X</a></td>
 
 
         </tr>
@@ -49,13 +59,12 @@
 
     </tbody>
 </table>
-
-<h1>${unProducto.producto}</h1>
-
+<br><br>
 <a href="Productoform.jsp" class="btn btn-primary">Registrar Producto</a>
 
 <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-
 </body>
+
+
 </html>
 

@@ -32,7 +32,7 @@ import java.io.IOException;
                 prod.setId(id);
                 req.getSession().setAttribute("producto",prod);
 
-                respuesta ="ProductoForm.jsp";
+                respuesta ="Productoform.jsp";
             }
 
             //Falta regresar una respuesta
@@ -55,6 +55,6 @@ import java.io.IOException;
                 dao.insert(new Producto(0,producto,cantidad,unidadm));
             }
 
-            resp.sendRedirect("vistaProducto.jsp");
+            resp.sendRedirect("vistaProductos.jsp");
         }
     }

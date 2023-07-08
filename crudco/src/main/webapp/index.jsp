@@ -9,8 +9,9 @@
     <title>Cocina Economica</title>
     <nav class="navbar nav justify-content-end bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.jsp" style="color: #fdfdfe">Cocina Económica</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.jsp" style="color: #fdfdfe">
+                <img src="assets/img/tacos-logo.png" width="50" height="50"/>
+                Cocina Económica</a>            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,7 +33,8 @@
 </head>
 <body style="background-color: #2c3034">>
 
-<h1 style="color: #fdfdfe">Bienvenido a la Cocina Económica</h1>
+<center><h1 style="color: #fdfdfe">Bienvenido al inventario de <br>
+    la Cocina Económica</h1></center>
 
 <%
     Producto prod = new Producto();

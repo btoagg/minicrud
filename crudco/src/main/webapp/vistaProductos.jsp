@@ -7,7 +7,9 @@
     <title>Cocina Economica</title>
     <nav class="navbar nav justify-content-end bg-dark">
         <div class="container-fluid" >
-            <a class="navbar-brand" href="index.jsp" style="color: #fdfdfe">Cocina Económica</a>
+            <a class="navbar-brand" href="index.jsp" style="color: #fdfdfe">
+                <img src="assets/img/tacos-logo.png" width="50" height="50"/>
+                Cocina Económica</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,10 +30,11 @@
         </div>
     </nav>
 </head>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/estiloanimado.css">
+
 <div class="container">
     <div class="row">
-        <div class="col col-md-auto">
+        <div class="col col-md-6">
             <div class="bg"></div>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
@@ -45,7 +48,7 @@
     <tr>
         <th width="100px">Producto</th>
         <th width="150px">Cantidad</th>
-        <th width="250px">Unidad de medida</th>
+        <th width="150px">Unidades</th>
         <th>Editar</th>
         <th>Eliminar</th>
     </tr>
@@ -61,7 +64,7 @@
         <tr>
             <td width="150px">${u.producto}</td>
             <td width="150px">${u.cantidad}</td>
-            <td width="250px">${u.unidadm}</td>
+            <td width="300px">${u.unidadm}</td>
             <td><a class="btn btn-warning"
                    href="comida-servlet?id=${u.id}&operacion=update">Editar</a></td>
             <td><a class="btn btn-danger"

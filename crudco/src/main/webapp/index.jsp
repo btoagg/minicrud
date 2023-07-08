@@ -4,63 +4,35 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Cocina Económica</title>
-    <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet">
-</head>
-<body>
-<header>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <title>Cocina Economica</title>
+    <nav class="navbar nav justify-content-end bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.jsp">
-                Cocina Económica
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <a class="navbar-brand" href="index.jsp" style="color: #fdfdfe">Cocina Económica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Cocina </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link"href="index.jsp">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="vistaProductos.jsp">Consultar Inventario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://www.utez.edu.mx/">Contacto</a>
-                        </li>
-                    </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.jsp" style="color: #fdfdfe">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vistaProductos.jsp" style="color: #fdfdfe">Consultar Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Productoform.jsp" style="color: #fdfdfe">Modificar Inventario</a>
+                    </li>
 
-                </div>
+                </ul>
             </div>
         </div>
     </nav>
-</header>
+</head>
+<body style="background-color: #2c3034">>
 
-<link rel="stylesheet" href="css/style.css">
-
-<div class="container">
-    <div class="row">
-        <div class="col col-md-4">
-            <div class="bg"></div>
-            <div class="bg bg2"></div>
-            <div class="bg bg3"></div>
-
-<h1><%= "Bienvenido a la Cocina Económica" %>
-</h1>
-<br/>
+<h1 style="color: #fdfdfe">Bienvenido a la Cocina Económica</h1>
 
 <%
     Producto prod = new Producto();
@@ -77,6 +49,24 @@
 
     request.getSession().setAttribute("productos",listaProducto);
 %>
+<center>
+    <div id="carouselExampleInterval" class="carousel slide pointer-event" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item" data-bs-interval="1000">
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-50" src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text>Tacos de Pastor</text></img>
+
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-50" src="https://vivirmejor.mx/wp-content/uploads/2020/08/Comida-Tipica-Mexicana-Pozole-Portada.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#666"></rect><text>Pozole</text></img>
+
+            </div>
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-50" src="https://i.pinimg.com/736x/a6/a1/21/a6a1218f4251bc9dc295d60140ff2376.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#555"></rect><text>Tacos Dorados</text></img>
+
+            </div>
+        </div>
+    </div>
+</center>
 
 <% for (Producto p: listaProducto) { %>
 <% } %>
@@ -87,7 +77,8 @@
     }
 </script>
         </div>
-
+    </div>
+</div>
         <script src="assets/js/bootstrap.js" type="text/javascript"></script>
 </body>
 </html>
